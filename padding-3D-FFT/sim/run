@@ -1,0 +1,15 @@
+vlib work
+vmap work work
+vlog -v ../dut/padding_3D_FFT.v ../dut/tb_padding_3D_FFT.v
+vsim work.tb_padding_3D_FFT -t 1ns
+
+add wave -radix float32 tb_padding_3D_FFT/u_padding_3D_FFT/clock
+add wave -radix float32 tb_padding_3D_FFT/u_padding_3D_FFT/reset
+add wave -radix float32 tb_padding_3D_FFT/u_padding_3D_FFT/io_in_en
+add wave -radix float32 tb_padding_3D_FFT/u_padding_3D_FFT/io_out_valid
+add wave -radix float32 tb_padding_3D_FFT/u_padding_3D_FFT/io_out_data_0_Re
+add wave -radix float32 tb_padding_3D_FFT/u_padding_3D_FFT/io_out_data_0_Im
+add wave -radix float32 tb_padding_3D_FFT/u_padding_3D_FFT/io_out_data_1_Re
+add wave -radix float32 tb_padding_3D_FFT/u_padding_3D_FFT/io_out_data_1_Im
+
+run 30us
